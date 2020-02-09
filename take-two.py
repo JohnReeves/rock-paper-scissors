@@ -15,10 +15,14 @@ choices="""
 """
 
 elements=["rock","paper","scissors"]
+play_again="yes"
 
 print(rules)
 
-do: 
+hello=input("what is your name? ")
+print(hello)
+
+while play_again in ["y","Y","yes","Yes"]:
     print(choices)
 
     user_choice = int(input("Your turn: "))
@@ -28,21 +32,21 @@ do:
     print("user choice is: %s" % elements[user_choice]) 
     print("\nNow its computer turn.......") 
 
-    comp_choice = random.randint(1, 3) 
-    while comp_choice == choice: 
-      comp_choice = random.randint(1, 3) 
+    comp_choice = random.randint(1, 3) -1
+    while comp_choice == user_choice: 
+      comp_choice = random.randint(1, 3) -1
 
     print("Computer choice is: %s " % elements[comp_choice]) 
 
-    print(choice_name + " V/s " + comp_choice_name) 
+    print("%s vs %s" % (elements[user_choice],elements[comp_choice]))
 
-    if((choice == 1 and comp_choice == 2) or
-       (choice == 2 and comp_choice ==1 )): 
+    if((user_choice == 1 and comp_choice == 2) or
+       (user_choice == 2 and comp_choice ==1 )): 
         # print("paper wins => ", end = "") 
         print("paper wins => ") 
         result = elements[1] # "paper"
-    elif((choice == 1 and comp_choice == 3) or
-         (choice == 3 and comp_choice == 1)): 
+    elif((user_choice == 1 and comp_choice == 3) or
+         (user_choice == 3 and comp_choice == 1)): 
         # print("Rock wins =>", end = "") 
         print("Rock wins =>") 
         result = elements[0] # "rock"
@@ -57,7 +61,6 @@ do:
         print("<== Computer wins ==>") 
           
     # print("Do you want to play again? (Y/N)") 
-    again = input("Do you want to play again? (Y/N) ")
+    play_again = input("Do you want to play again? (Y/N) ")
   
-while (again in ["y","Y","yes","Yes"])  
 
