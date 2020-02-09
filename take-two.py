@@ -1,6 +1,5 @@
 
-import random 
-  
+import random
 
 rules="""
 Winning Rules of the Rock paper scissor game as follows:
@@ -9,39 +8,32 @@ Rock vs scissor->Rock wins
 paper vs scissor->scissor wins
 """
 
+choices="""
+"Enter choice:
+1. Rock
+2. paper
+3. scissor
+"""
+
+elements=["rock","paper","scissors"]
+
 print(rules)
 
 while True: 
-    print("Enter choice \n 1. Rock \n 2. paper \n 3. scissor \n") 
-      
-    
-    choice = int(input("User turn: ")) 
-  
-    
-    while choice > 3 or choice < 1: 
-        choice = int(input("enter valid input: ")) 
-          
-  
+    print(choices) 
+    user_choice = int(input("Your turn: ")) 
+    while user_choice > 3 or user_choice < 1: 
+      user_choice = int(input("Give a valid choice: ")) 
 
-    if choice == 1: 
-        choice_name = 'Rock'
-    elif choice == 2: 
-        choice_name = 'paperr'
-    else: 
-        choice_name = 'scissor'
-          
-    
-    print("user choice is: " + choice_name) 
+    print("user choice is: " + elements[user_choice]) 
     print("\nNow its computer turn.......") 
-  
-   
+
     comp_choice = random.randint(1, 3) 
-      
-    
+
     while comp_choice == choice: 
-        comp_choice = random.randint(1, 3) 
-  
-    
+      comp_choice = random.randint(1, 3) 
+
+
     if comp_choice == 1: 
         comp_choice_name = 'Rock'
     elif comp_choice == 2: 
@@ -55,15 +47,18 @@ while True:
   
     if((choice == 1 and comp_choice == 2) or
       (choice == 2 and comp_choice ==1 )): 
-        print("paper wins => ", end = "") 
+        # print("paper wins => ", end = "") 
+        print("paper wins => ") 
         result = "paper"
           
     elif((choice == 1 and comp_choice == 3) or
         (choice == 3 and comp_choice == 1)): 
-        print("Rock wins =>", end = "") 
+        # print("Rock wins =>", end = "") 
+        print("Rock wins =>") 
         result = "Rock"
     else: 
-        print("scissor wins =>", end = "") 
+        # print("scissor wins =>", end = "") 
+        print("scissor wins =>") 
         result = "scissor"
   
     
@@ -72,12 +67,14 @@ while True:
     else: 
         print("<== Computer wins ==>") 
           
-    print("Do you want to play again? (Y/N)") 
-    ans = input() 
+    # print("Do you want to play again? (Y/N)") 
+    again = input("Do you want to play again? (Y/N) ")
   
   
     
-    if ans == 'n' or ans == 'N': 
-        break
+    if again == "n" or again == "N": 
+      break
+    else:
+      pass
       
 
