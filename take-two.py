@@ -1,4 +1,3 @@
-
 import random
 
 rules="""
@@ -19,50 +18,40 @@ elements=["rock","paper","scissors"]
 
 print(rules)
 
-while True: 
-    print(choices) 
-    user_choice = int(input("Your turn: ")) 
+do: 
+    print(choices)
+
+    user_choice = int(input("Your turn: "))
     while user_choice > 3 or user_choice < 1: 
       user_choice = int(input("Give a valid choice: ")) 
 
-    print("user choice is: " + elements[user_choice]) 
+    print("user choice is: %s" % elements[user_choice]) 
     print("\nNow its computer turn.......") 
 
     comp_choice = random.randint(1, 3) 
-
     while comp_choice == choice: 
       comp_choice = random.randint(1, 3) 
 
+    print("Computer choice is: %s " % elements[comp_choice]) 
 
-    if comp_choice == 1: 
-        comp_choice_name = 'Rock'
-    elif comp_choice == 2: 
-        comp_choice_name = 'paper'
-    else: 
-        comp_choice_name = 'scissor'
-          
-    print("Computer choice is: " + comp_choice_name) 
-  
     print(choice_name + " V/s " + comp_choice_name) 
-  
+
     if((choice == 1 and comp_choice == 2) or
-      (choice == 2 and comp_choice ==1 )): 
+       (choice == 2 and comp_choice ==1 )): 
         # print("paper wins => ", end = "") 
         print("paper wins => ") 
-        result = "paper"
-          
+        result = elements[1] # "paper"
     elif((choice == 1 and comp_choice == 3) or
-        (choice == 3 and comp_choice == 1)): 
+         (choice == 3 and comp_choice == 1)): 
         # print("Rock wins =>", end = "") 
         print("Rock wins =>") 
-        result = "Rock"
+        result = elements[0] # "rock"
     else: 
         # print("scissor wins =>", end = "") 
         print("scissor wins =>") 
-        result = "scissor"
-  
-    
-    if result == choice_name: 
+        result = elements[2] # "scissors"
+
+    if result == elements[user_choice]: 
         print("<== User wins ==>") 
     else: 
         print("<== Computer wins ==>") 
@@ -70,11 +59,5 @@ while True:
     # print("Do you want to play again? (Y/N)") 
     again = input("Do you want to play again? (Y/N) ")
   
-  
-    
-    if again == "n" or again == "N": 
-      break
-    else:
-      pass
-      
+while (again in ["y","Y","yes","Yes"])  
 
