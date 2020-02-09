@@ -10,8 +10,8 @@ paper vs scissor->scissor wins
 choices="""
 Enter choice:
 1. Rock
-2. paper
-3. scissor
+2. Paper
+3. Scissors
 """
 
 elements=["rock","paper","scissors"]
@@ -28,7 +28,7 @@ while play_again == 1:
     while user_choice > 3 or user_choice < 1: 
       user_choice = int(input("Give a valid choice: ")) 
 
-    user_choice -= 1 # convert to arrary index
+    user_choice -= 1 # convert to array index
     print("user choice is: %s" % elements[user_choice]) 
     print("\nNow its computer turn.......") 
 
