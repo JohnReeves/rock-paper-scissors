@@ -28,24 +28,25 @@ while play_again == 1:
     while user_choice > 3 or user_choice < 1: 
       user_choice = int(input("Give a valid choice: ")) 
 
+    user_choice -= 1 # convert to arrary index
     print("user choice is: %s" % elements[user_choice]) 
     print("\nNow its computer turn.......") 
 
-    comp_choice = random.randint(1, 3) -1
+    comp_choice = random.randint(0, 2)
     while comp_choice == user_choice: 
-      comp_choice = random.randint(1, 3) -1
+      comp_choice = random.randint(0, 2)
 
     print("Computer choice is: %s " % elements[comp_choice]) 
     print("%s vs %s" % (elements[user_choice],elements[comp_choice]))
 
     # paper & rock
-    if((user_choice == 1 and comp_choice == 2) or
-       (user_choice == 2 and comp_choice ==1 )): 
+    if((user_choice == 0 and comp_choice == 1) or
+       (user_choice == 1 and comp_choice == 0 )): 
         print("paper wins => ") 
         result = elements[1] # "paper"
     # scissors & rock
-    elif((user_choice == 1 and comp_choice == 3) or
-         (user_choice == 3 and comp_choice == 1)): 
+    elif((user_choice == 0 and comp_choice == 2) or
+         (user_choice == 2 and comp_choice == 0)): 
         print("Rock wins =>") 
         result = elements[0] # "rock"
     # scissors & paper?
