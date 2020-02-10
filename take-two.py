@@ -22,7 +22,8 @@ print(rules)
 # while play_again in ["y","Y","yes","Yes"]:
 play_again=1
 while play_again == 1:
-    print(choices)
+   print("*********************\n")
+   print(choices)
 
     user_choice = int(input("Your turn: "))
     while user_choice > 3 or user_choice < 1: 
@@ -53,13 +54,14 @@ while play_again == 1:
     else: 
         print("scissor wins =>") 
         result = elements[2] # "scissors"
-    # what about the draw?
+    # draw is rejeted at the start
 
     if result == elements[user_choice]: 
         print("<== User wins ==>") 
     else: 
-        print("<== Computer wins ==>") 
-          
+        print("<== Computer wins ==>")
+
+    print("*********************\n")
     print("Do you want to play again?") 
     play_again = int(input("1 for yes; 2 for no: "))
 
